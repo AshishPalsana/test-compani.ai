@@ -1,8 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 
+interface CompanyInfoFormData {
+  companyName: string;
+  companyWebsite: string;
+  location: string;
+  logo: File | null;
+  about: string;
+}
+
 interface Props {
-  onSubmit: (data: any) => void;
-  defaultValues?: any;
+  onSubmit: (data: CompanyInfoFormData) => void;
+  defaultValues?: Partial<CompanyInfoFormData>;
 }
 
 const COUNTRIES = [
@@ -147,7 +155,7 @@ export const CompanyInfoForm: React.FC<Props> = ({
               value={form.companyName}
               onChange={handleChange}
               placeholder="Enter Company name"
-              className="w-full border border-gray-400 rounded-[0.3rem] px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black"
+              className="w-full border border-gray-400 rounded-[0.3rem] px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black placeholder:text-gray-400"
             />
             {errors.companyName && (
               <p className="text-red-700 text-sm mt-1">{errors.companyName}</p>
@@ -163,7 +171,7 @@ export const CompanyInfoForm: React.FC<Props> = ({
               value={form.companyWebsite}
               onChange={handleChange}
               placeholder="https://"
-              className="w-full border border-gray-400 rounded-[0.3rem] px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black"
+              className="w-full border border-gray-400 rounded-[0.3rem] px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black placeholder:text-gray-400"
             />
             {errors.companyWebsite && (
               <p className="text-red-700 text-sm mt-1">
@@ -184,7 +192,7 @@ export const CompanyInfoForm: React.FC<Props> = ({
                 value={form.location}
                 onClick={() => setIsLocationOpen(true)}
                 placeholder="Enter Location"
-                className="w-full border border-gray-400 rounded-[0.3rem] px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black cursor-pointer"
+                className="w-full border border-gray-400 rounded-[0.3rem] px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black cursor-pointer placeholder:text-gray-400"
               />
 
               {/* Dropdown Arrow */}
@@ -215,7 +223,7 @@ export const CompanyInfoForm: React.FC<Props> = ({
                     placeholder="Search country..."
                     value={locationSearch}
                     onChange={(e) => setLocationSearch(e.target.value)}
-                    className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-[0.3rem] text-sm focus:outline-none"
+                    className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-[0.3rem] text-sm focus:outline-none placeholder:text-gray-400"
                   />
                 </div>
 
@@ -225,7 +233,7 @@ export const CompanyInfoForm: React.FC<Props> = ({
                     <div
                       key={country}
                       onClick={() => handleLocationSelect(country)}
-                      className="px-4 py-2 cursor-pointer hover:bg-gray-100 text-sm"
+                      className="px-4 py-2 cursor-pointer hover:bg-gray-100 text-sm text-gray-800"
                     >
                       {country}
                     </div>
@@ -295,7 +303,7 @@ export const CompanyInfoForm: React.FC<Props> = ({
             value={form.about}
             onChange={handleChange}
             placeholder="Enter a description"
-            className="w-full border border-gray-400 rounded-[0.3rem] px-3 py-2 min-h-24 focus:outline-none focus:ring-1 focus:ring-black"
+            className="w-full border border-gray-400 rounded-[0.3rem] px-3 py-2 min-h-24 focus:outline-none focus:ring-1 focus:ring-black placeholder:text-gray-400"
           />
           {errors.about && (
             <p className="text-red-700 text-sm mt-1">{errors.about}</p>
