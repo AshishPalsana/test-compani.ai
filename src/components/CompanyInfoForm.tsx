@@ -139,7 +139,7 @@ export const CompanyInfoForm: React.FC<Props> = ({
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 mb-6">
           <div>
-            <label className="block font-normal mb-2">
+            <label className="block font-normal mb-2 text-gray-800">
               Company name<span className="text-red-700">*</span>
             </label>
             <input
@@ -155,7 +155,7 @@ export const CompanyInfoForm: React.FC<Props> = ({
           </div>
 
           <div>
-            <label className="block font-normal mb-2">
+            <label className="block font-normal mb-2 text-gray-800">
               Company Website<span className="text-red-700">*</span>
             </label>
             <input
@@ -173,7 +173,7 @@ export const CompanyInfoForm: React.FC<Props> = ({
           </div>
 
           <div ref={locationRef} className="relative">
-            <label className="block font-normal mb-2">
+            <label className="block font-normal mb-2 text-gray-800">
               Location<span className="text-red-700">*</span>
             </label>
 
@@ -240,7 +240,7 @@ export const CompanyInfoForm: React.FC<Props> = ({
           </div>
 
           <div>
-            <label className="block font-normal mb-2">
+            <label className="block font-normal mb-2 text-gray-800">
               Company Logo<span className="text-red-700">*</span>
             </label>
 
@@ -287,7 +287,7 @@ export const CompanyInfoForm: React.FC<Props> = ({
         </div>
 
         <div className="mb-8 border-t border-gray-200 pt-8">
-          <label className="block font-normal mb-2">
+          <label className="block font-normal mb-2 text-gray-800">
             About your Company<span className="text-red-700">*</span>
           </label>
           <textarea
