@@ -267,7 +267,7 @@ export const CompanyInfoForm: React.FC<Props> = ({
                 </div>
 
                 <div>
-                  <div className="font-normal">Add Logo</div>
+                  <div className="font-normal text-gray-800">Add Logo</div>
                   <div className="text-xs text-gray-400">
                     JPG or PNG. Max 5MB.
                   </div>
